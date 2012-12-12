@@ -2,25 +2,29 @@
 
 class XML 
 {
-	/**
-	 * Create xml from object
-	 * @param  array  $list     list of objects
-	 * @param  string $rootnode 
-	 * @param  string $basenode 
-	 * @return string
-	 */
-	public static function create($list = array(), $rootnode = 'trucks', $basenode = 'truck')
+	public static function create($truck, $rootnode='trucks', $basenode='truck')
 	{
 		$xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 		$xml .= "<$rootnode>\n";
 
-		foreach ($list as $truck) {
+		if ( is_array($truck) ) 
+		{
+			foreach ($truck as $trucks) 
+			{
+				$xml .= "\t<$basenode id=\"$trucks->id\" name=\"$trucks->name\"";
+				$xml .= " description=\"$trucks->description\"";
+				$xml .= " city=\"$trucks->city\" state=\"$trucks->state\"/>\n";
+			}
+		} 
+		else 
+		{
 			$xml .= "\t<$basenode id=\"$truck->id\" name=\"$truck->name\"";
 			$xml .= " description=\"$truck->description\"";
-			$xml .= " city=\"$truck->city state=\"$truck->state\"/>\n";
+			$xml .= " city=\"$truck->city\" state=\"$truck->state\"/>\n";
 		}
 
 		$xml .= "</$rootnode>";
 		return $xml;
 	}
+
 }

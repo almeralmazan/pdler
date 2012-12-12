@@ -1,9 +1,7 @@
 <?php
 require 'vendor/autoload.php';
-require_once 'vendor/paris/idiorm.php';
-require_once 'vendor/paris/paris.php';
-require 'models/Truck.php';
 require 'vendor/xml/xml.php';
+require_once 'vendor/idiorm/idiorm.php';
 
 ORM::configure('mysql:host=localhost;dbname=pdler_db');
 ORM::configure('username', 'root');
@@ -15,10 +13,9 @@ $app = new \Slim\Slim();
 
 // home page
 // pdslim.dev/trucks
-$app->get('/trucks', function()
+$app->get('/trucks', function ()
 {
-	$trucks = Model::factory('Truck')->find_many();
-	echo XML::create($trucks);
+	echo XML::create( ORM::for_table('trucks')->find_many() );
 });
 
 
@@ -26,7 +23,7 @@ $app->get('/trucks', function()
 // pdslim.dev/trucks/1
 $app->get('/trucks/:id', function ($id)
 {
-	$truck = Model::factory('Truck')->find_one($id);
+	$truck = ORM::for_table('trucks')->find_one($id);
 	echo (! $truck) ? "No truck available" : XML::create($truck);
 });
 
@@ -36,7 +33,7 @@ $app->get('/trucks/:id', function ($id)
 $app->get('/trucks/lon/:lon/lat/:lat/max_dis/:max_dis', 
 function ($lon, $lat, $max_dis) 
 {
-	$formula = "sqrt(pow(abs(longitude-$lon),2)*pow(abs(latitude-$lat),2))";
+	$formula = "sqrt( pow(abs(longitude-$lon),2) * pow(abs(latitude-$lat),2) )";
 
 	$trucks = ORM::for_table('trucks')->raw_query(
 			"SELECT * FROM trucks WHERE $max_dis >= $formula"
@@ -62,6 +59,16 @@ $app->get('/search-by-desc/:desc', function ($desc)
 {
 	$trucks = ORM::for_table('trucks')
 		->where_like('description', '%'.$desc.'%')->find_many();
+	echo (! $trucks) ? "not found" : XML::create($trucks);
+});
+
+
+// search by category
+// pdslim.dev/search-by-category/
+$app->get('/search-by-category/:category', function ($category)
+{
+	$trucks = ORM::for_table('trucks')
+		->where_like('category', '%'.$category.'%')->find_many();
 	echo (! $trucks) ? "not found" : XML::create($trucks);
 });
 
