@@ -13,6 +13,7 @@ class XML
 			{
 				$xml .= "\t<$basenode id=\"$trucks->id\" name=\"$trucks->name\"";
 				$xml .= " description=\"$trucks->description\"";
+				$xml .= " category=\"$trucks->category\"";
 				$xml .= " city=\"$trucks->city\" state=\"$trucks->state\"/>\n";
 			}
 		} 
@@ -20,6 +21,7 @@ class XML
 		{
 			$xml .= "\t<$basenode id=\"$truck->id\" name=\"$truck->name\"";
 			$xml .= " description=\"$truck->description\"";
+			$xml .= " category=\"$trucks->category\"";
 			$xml .= " city=\"$truck->city\" state=\"$truck->state\"/>\n";
 		}
 
