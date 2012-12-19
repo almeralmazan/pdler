@@ -91,22 +91,32 @@ $app->post('/nearme', function () {
 
 // search by description
 // pdslim.dev/search-by-desc/amer
-// $app->get('/search-by-desc/:desc', function ($desc) {
-// 	$trucks = ORM::for_table('trucks')
-// 		->where_like('description', '%'.$desc.'%')
-// 		->find_many();
-// 	echo (! $trucks) ? "not found" : XML::create($trucks);
-// });
+$app->post('/search_by_name', function () {
+	$name = $_POST['name'];	
+
+	$trucks = ORM::for_table('trucks')
+		->where_like('name', '%'.$name.'%')
+		->find_many();
+	echo (! $trucks) ? "not found" : XML::create($trucks);
+});
 
 
 // search by category
 // pdslim.dev/search-by-category/chinese
-// $app->get('/search-by-category/:category', function ($category) {
-// 	$trucks = ORM::for_table('trucks')
-// 		->where_like('category', '%'.$category.'%')
-// 		->find_many();
-// 	echo (! $trucks) ? "not found" : XML::create($trucks);
-// });
+$app->post('/search', function () {
+
+	$category = $_POST['category'];
+	$about = $_POST['about'];
+	$name = $_POST['name'];
+
+	$trucks = ORM::for_table('trucks')
+				->join('truck_details', array('trucks.id', '=', 'truck_details.truck_id'))
+				->where_like('category', '%'.$category.'%')
+				->find_one();
+
+	 // OR about LIKE '%".$about."%' OR name LIKE '%".$name."%'
+	echo (! $trucks) ? "not found" : XML::create($trucks);
+});
 
 
 //-------------
