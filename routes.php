@@ -17,6 +17,20 @@ $app->get('/signup', function() use ($app) {
 	$app->render('signup.php', array('title' => 'Signup page goes here...'));
 });
 
+$app->post('/signup', function() {
+	$type = $_POST['type'];
+
+	if ($type == 'email') {
+		echo 'email';
+	} else if ($type == 'facebook') {
+		echo 'facebook';
+	} else if ($type == 'twitter') {
+		echo 'twitter';
+	} else {
+		echo 'not a valid type';
+	}
+});
+
 
 // - - - - - - - - - - - -
 // LOGIN PAGE
@@ -35,36 +49,33 @@ $app->post('/login', function() {
 });
 
 
-// - - - - - - - - - - - - - 
-// TRUCK DETAILS
-// - - - - - - - - - - - - - 
-$app->post('/truck_details', function() {
-	$truck_id = $_POST['truck_id'];
-
-	$results = ORM::for_table('trucks')
-				->join('truck_details', 'trucks.id = truck_details.truck_id')
-				->find_one($truck_id);
-
-	echo XML::create_truck($results);
+// - - - - - - - - - - - - - - - - - - - -
+// TRUCK LIST --> OK
+// - - - - - - - - - - - - - - - - - - - -
+$app->post('/trucks', function() {
+	$trucks = ORM::for_table('trucks')
+				->raw_query("SELECT * FROM trucks LEFT JOIN truck_details ON trucks.id = truck_details.truck_id")
+				->find_many();
+	echo XML::create_trucks($trucks);
 });
 
 
-// list of all trucks
-// pdslim.dev/trucks
-// $app->get('/trucks', function () {
-// 	echo XML::create( ORM::for_table('trucks')->find_many() );
-// });
+// - - - - - - - - - - - - - - - - - - - -
+// TRUCK DETAILS --> OK
+// TODO: Need to refactor using raw query
+// - - - - - - - - - - - - - - - - - - - -
+$app->post('/truck_details', function() {
+	$truck_id = $_POST['truck_id'];
+	$results = ORM::for_table('trucks')->find_one($truck_id);
+	echo XML::create($results);
+});
 
 
-// get specific truck by id
-// pdslim.dev/trucks/1
-// $app->get('/trucks/:id', function ($id) {
-// 	$truck = ORM::for_table('trucks')->find_one($id);
-// 	echo (! $truck) ? "No truck available" : XML::create($truck);
-// });
-
-
-// get trucks depending on latitude, longitude, and max_distance
+// - - - - - - - - - - - - - - - - - - - -
+// NEARME --> OK
+// get trucks depending on latitude, 
+// longitude, and max_distance
+// - - - - - - - - - - - - - - - - - - - -
 $app->post('/nearme', function () {
 	$lat = $_POST['latitude'];
 	$lon = $_POST['longitude'];
@@ -76,46 +87,22 @@ $app->post('/nearme', function () {
 			"SELECT * FROM trucks WHERE $max_dis >= $formula"
 		)->find_many();
 
-	echo XML::create($trucks);
+	echo XML::create_trucks($trucks);
 });
 
 
-// search by name 
-// pdslim.dev/search-by-name/kfc
-// $app->get('/search-by-name/:name', function ($name) {
-// 	$trucks = ORM::for_table('trucks')
-// 		->where_like('name', '%'.$name.'%')->find_many();
-// 	echo (! $trucks) ? "not found" : XML::create($trucks);
-// });
-
-
-// search by description
-// pdslim.dev/search-by-desc/amer
-$app->post('/search_by_name', function () {
-	$name = $_POST['name'];	
-
-	$trucks = ORM::for_table('trucks')
-		->where_like('name', '%'.$name.'%')
-		->find_many();
-	echo (! $trucks) ? "not found" : XML::create($trucks);
-});
-
-
-// search by category
-// pdslim.dev/search-by-category/chinese
+// - - - - - - - - - - - - - - - - - - - -
+// TRUCK SEARCH --> OK
+// - - - - - - - - - - - - - - - - - - - -
 $app->post('/search', function () {
 
-	$category = $_POST['category'];
-	$about = $_POST['about'];
-	$name = $_POST['name'];
+	$keyword = $_POST['keyword'];
 
 	$trucks = ORM::for_table('trucks')
-				->join('truck_details', array('trucks.id', '=', 'truck_details.truck_id'))
-				->where_like('category', '%'.$category.'%')
-				->find_one();
+				->raw_query("SELECT * FROM trucks LEFT JOIN truck_details ON trucks.id = truck_details.truck_id WHERE trucks.name LIKE \"%$keyword%\" OR trucks.category LIKE \"%$keyword%\" OR truck_details.about LIKE \"%$keyword%\"")
+				->find_many();
 
-	 // OR about LIKE '%".$about."%' OR name LIKE '%".$name."%'
-	echo (! $trucks) ? "not found" : XML::create($trucks);
+	echo XML::create_trucks($trucks);
 });
 
 
