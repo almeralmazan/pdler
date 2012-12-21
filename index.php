@@ -4,7 +4,8 @@
 // Include all libraries
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 require 'vendor/autoload.php';
-require 'vendor/xml/xml.php';
+require 'vendor/helper/xml.php';
+require 'vendor/controllers/user_controller.php';
 require_once 'vendor/idiorm/idiorm.php';
 
 

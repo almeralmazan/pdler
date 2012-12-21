@@ -2,6 +2,7 @@
 
 $app = new \Slim\Slim();
 
+
 // - - - - - - - - - - - -
 // HOME PAGE 
 // - - - - - - - - - - - -
@@ -9,6 +10,9 @@ $app->get('/', function() {
 	echo 'Home page';
 });
 
+$app->get('/sample', function() use ($app) {
+	$app->render('sample.php');
+});
 
 // - - - - - - - - - - - -
 // SIGNUP PAGE 
@@ -17,37 +21,11 @@ $app->get('/signup', function() use ($app) {
 	$app->render('signup.php', array('title' => 'Signup page goes here...'));
 });
 
-// $app->post('/signup', function() {
-// 	$type = $_POST['type'];
 
-// 	if ($type == 'email') {
-// 		echo 'email';
-// 	} else if ($type == 'facebook') {
-// 		echo 'facebook';
-// 	} else if ($type == 'twitter') {
-// 		echo 'twitter';
-// 	} else {
-// 		echo 'not a valid type';
-// 	}
-// });
-
-
-// - - - - - - - - - - - -
-// LOGIN PAGE
-// - - - - - - - - - - - -
-$app->get('/login', function() use ($app) {
-	$app->render('/login.php');
+$app->post('/signup', function() {
+	$user = new UserController();
+	$user->signup();
 });
-
-$app->post('/login', function() {
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-
-	echo 'Username : ' . $username;
-	echo '<br />';
-	echo 'Password : ' . $password;
-});
-
 
 // - - - - - - - - - - - - - - - - - - - -
 // TRUCK LIST --> OK

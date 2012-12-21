@@ -1,0 +1,6 @@
+Be sure not to overwrite login, signup template files
+
+If so, change the css and js location to 
+
+../pdler/public/css/style.css
+../pdler/public/js/script.js
