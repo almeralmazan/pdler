@@ -17,19 +17,19 @@ $app->get('/signup', function() use ($app) {
 	$app->render('signup.php', array('title' => 'Signup page goes here...'));
 });
 
-$app->post('/signup', function() {
-	$type = $_POST['type'];
+// $app->post('/signup', function() {
+// 	$type = $_POST['type'];
 
-	if ($type == 'email') {
-		echo 'email';
-	} else if ($type == 'facebook') {
-		echo 'facebook';
-	} else if ($type == 'twitter') {
-		echo 'twitter';
-	} else {
-		echo 'not a valid type';
-	}
-});
+// 	if ($type == 'email') {
+// 		echo 'email';
+// 	} else if ($type == 'facebook') {
+// 		echo 'facebook';
+// 	} else if ($type == 'twitter') {
+// 		echo 'twitter';
+// 	} else {
+// 		echo 'not a valid type';
+// 	}
+// });
 
 
 // - - - - - - - - - - - -
