@@ -61,6 +61,8 @@ class UserController
 		$user->username = $username;
 		$user->email = $email;
 		$user->password = $password;
+		$user->created_at = date("Y-m-d H:i:s");
+		$user->updated_at = "0000-00-00 00:00:00";
 		$user->save();
 	}
 
