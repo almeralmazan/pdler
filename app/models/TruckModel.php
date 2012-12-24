@@ -8,24 +8,22 @@
  */
 class TruckModel
 {
-   public static function listAllTrucks()
+   public static function selectAllTrucks()
    {
       $query = "SELECT * " .
                "FROM trucks " .
                "LEFT JOIN truck_details " .
                "ON trucks.id = truck_details.truck_id";
 
-      $trucks = ORM::for_table('trucks')
-         ->raw_query($query)
-         ->find_many();
+      $result = ORM::for_table('trucks')->raw_query($query)->find_many();
 
-      echo XmlHelper::create_trucks($trucks);
+      return $result;
    }
 
-   public static function viewTruckDetailsByTruckId()
+   public static function listTruckDetails()
    {
       $truck_id = $_POST['truck_id'];
       $results = ORM::for_table('trucks')->find_one($truck_id);
-      echo XmlHelper::create($results);
+      return $results;
    }
 }

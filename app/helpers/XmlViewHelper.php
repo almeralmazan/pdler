@@ -1,12 +1,11 @@
 <?php
 
-class XmlHelper
+class XmlViewHelper
 {
 	public static function create($truck)
 	{
       $xml = self::create_header();
 		if ($truck) {
-			$xml .= "<truck id=\"$truck->id\" name=\"$truck->name\"";
 			$xml .= "<truck id=\"$truck->id\" name=\"$truck->name\"";
 			$xml .= " display_name=\"$truck->display_name\" city=\"$truck->city\"";
 			$xml .= " state=\"$truck->state\" category=\"$truck->category\"";
@@ -21,7 +20,7 @@ class XmlHelper
 	}
 
 	
-	public static function create_trucks($truck, $rootnode='trucks', $basenode='truck')
+	public static function listAllTrucks($truck, $rootnode='trucks', $basenode='truck')
 	{
       $xml = self::create_header();
 		$xml .= "<$rootnode>\n";

@@ -19,11 +19,13 @@ $app->post('/signup', function() {
 });
 
 $app->post('/trucks', function() {
-   TruckModel::listAllTrucks();
+   $trucks = TruckModel::selectAllTrucks();
+   echo XmlViewHelper::listAllTrucks($trucks);
 });
 
 $app->post('/truck_details', function() {
-	TruckModel::viewTruckDetailsByTruckId();
+	$truck_details = TruckModel::listTruckDetails();
+   echo XmlViewHelper::create($truck_details);
 });
 
 $app->post('/nearme', function () {
@@ -37,7 +39,7 @@ $app->post('/nearme', function () {
 			"SELECT * FROM trucks WHERE $max_dis >= $formula"
 		)->find_many();
 
-	echo XmlHelper::create_trucks($trucks);
+	echo XmlViewHelper::create_trucks($trucks);
 });
 
 $app->post('/search', function () {
@@ -48,7 +50,7 @@ $app->post('/search', function () {
 				->raw_query("SELECT * FROM trucks LEFT JOIN truck_details ON trucks.id = truck_details.truck_id WHERE trucks.name LIKE \"%$keyword%\" OR trucks.category LIKE \"%$keyword%\" OR truck_details.about LIKE \"%$keyword%\"")
 				->find_many();
 
-	echo XmlHelper::create_trucks($trucks);
+	echo XmlViewHelper::create_trucks($trucks);
 });
 
 $app->run();
