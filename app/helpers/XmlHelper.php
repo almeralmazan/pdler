@@ -1,10 +1,12 @@
 <?php
 
-class XML 
+class XmlHelper
 {
 	public static function create($truck)
 	{
+      $xml = self::create_header();
 		if ($truck) {
+			$xml .= "<truck id=\"$truck->id\" name=\"$truck->name\"";
 			$xml .= "<truck id=\"$truck->id\" name=\"$truck->name\"";
 			$xml .= " display_name=\"$truck->display_name\" city=\"$truck->city\"";
 			$xml .= " state=\"$truck->state\" category=\"$truck->category\"";
@@ -21,6 +23,7 @@ class XML
 	
 	public static function create_trucks($truck, $rootnode='trucks', $basenode='truck')
 	{
+      $xml = self::create_header();
 		$xml .= "<$rootnode>\n";
 
 		foreach ($truck as $trucks) {
@@ -42,18 +45,34 @@ class XML
 
 	public static function create_error_messages( $errors ) 
 	{
-		$msgs = "<messages/>\n";
+		$message = "<messages/>\n";
 
 		foreach( $errors as $key => $value ) {
-			$msgs .= "\t<message ";
-			$msgs .= "source=\"$key\" ";
-			$msgs .= "text=\"$value\" ";
-			$msgs .= "/>\n";
+			$message .= "\t<message ";
+			$message .= "source=\"$key\" ";
+			$message .= "text=\"$value\" ";
+			$message .= "/>\n";
 		}
 		
-		$msgs .= "</messages>";
-		return $msgs;
+		$message .= "</messages>";
+		return $message;
 	}
+
+   public static function render_signup_error($errors)
+   {
+      $xml = XmlHelper::create_header();
+      $xml .= "<signup success=\"false\">\n";
+      $xml .= XmlHelper::create_error_messages($errors);
+      $xml .= "\n</signup>";
+      echo $xml;
+   }
+
+   public static function render_signup_success()
+   {
+      $xml = XmlHelper::create_header();
+      $xml .= "<signup success=\"true\"/>";
+      echo $xml;
+   }
 
 	public static function create_header() 
 	{ 

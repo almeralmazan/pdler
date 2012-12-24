@@ -4,8 +4,9 @@
 // Include all libraries
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 require 'vendor/autoload.php';
-require 'vendor/helper/xml.php';
-require 'vendor/controllers/user_controller.php';
+require 'app/helpers/XMLHelper.php';
+require 'app/controllers/UserController.php';
+require 'app/models/TruckModel.php';
 require_once 'vendor/idiorm/idiorm.php';
 
 
