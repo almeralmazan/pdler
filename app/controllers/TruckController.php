@@ -10,7 +10,7 @@ class TruckController
 {
    public function __construct(){}
 
-   public function get_all_trucks_nearme()
+   public function getAllTrucksNearMe()
    {
       $latitude = $_POST['latitude'];
       $longitude = $_POST['longitude'];
@@ -21,7 +21,7 @@ class TruckController
       return $location;
    }
 
-   public function search_all_trucks_by_keyword()
+   public function searchAllTrucksByKeyword()
    {
       $keyword = $_POST['keyword'];
 

@@ -2,9 +2,9 @@
 
 class XmlHelper
 {
-	public static function view_truck_details_of_one($truck)
+	public static function viewTruckDetailsForOne($truck)
 	{
-      $xml = self::create_header();
+      $xml = self::createHeader();
 
 		if ($truck) {
 			$xml .= "<truck id=\"$truck->id\" name=\"$truck->name\"";
@@ -21,9 +21,9 @@ class XmlHelper
 	}
 
 
-	public static function view_all($trucks)
+	public static function viewAll($trucks)
 	{
-      $xml = self::create_header();
+      $xml = self::createHeader();
 		$xml .= "<trucks>\n";
 
 		foreach ($trucks as $truck) {
@@ -43,7 +43,7 @@ class XmlHelper
 		echo $xml;
 	}
 
-	public static function create_error_messages( $errors )
+	public static function createErrorMessages( $errors )
 	{
 		$message = "<messages/>\n";
 
@@ -57,23 +57,23 @@ class XmlHelper
 		return $message;
 	}
 
-   public static function render_signup_error($errors)
+   public static function renderSignupError($errors)
    {
-      $xml = XmlViewHelper::create_header();
+      $xml = XmlHelper::createHeader();
       $xml .= "<signup success=\"false\">\n";
-      $xml .= XmlViewHelper::create_error_messages($errors);
+      $xml .= XmlHelper::createErrorMessages($errors);
       $xml .= "\n</signup>";
       echo $xml;
    }
 
-   public static function render_signup_success()
+   public static function renderSignupSuccess()
    {
-      $xml = XmlViewHelper::create_header();
+      $xml = XmlHelper::createHeader();
       $xml .= "<signup success=\"true\"/>";
       echo $xml;
    }
 
-	public static function create_header()
+	public static function createHeader()
 	{ 
 		return "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
 	}

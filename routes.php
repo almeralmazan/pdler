@@ -2,15 +2,15 @@
 
 $app = new \Slim\Slim();
 
+$app->config('templates.path', 'app/views');
+
+
 $app->get('/', function() {
-	echo 'Home page';
+	echo 'Pdler Web App';
 });
 
 $app->get('/signup', function() use ($app) {
-	$app->render(
-      'signup.php',
-      array('title' => 'Signup Page')
-   );
+	$app->render('signup.php', array('title' => 'Signup Page'));
 });
 
 $app->post('/signup', function() {
@@ -19,25 +19,25 @@ $app->post('/signup', function() {
 });
 
 $app->post('/truck_details', function() {
-   $truck = TruckModel::list_truck_details();
-   XmlHelper::view_truck_details_of_one($truck);
+   $truck = TruckModel::listTruckDetails();
+   XmlHelper::viewTruckDetailsForOne($truck);
 });
 
 $app->post('/trucks', function() {
-   $trucks = TruckModel::select_all_trucks();
-   XmlHelper::view_all($trucks);
+   $trucks = TruckModel::selectAllTrucks();
+   XmlHelper::viewAll($trucks);
 });
 
 $app->post('/nearme', function () {
    $tc = new TruckController();
-   $trucks = $tc->get_all_trucks_nearme();
-	XmlHelper::view_all($trucks);
+   $trucks = $tc->getAllTrucksNearMe();
+	XmlHelper::viewAll($trucks);
 });
 
 $app->post('/search', function () {
 	$tc  = new TruckController();
-   $trucks = $tc->search_all_trucks_by_keyword();
-	XmlHelper::view_all($trucks);
+   $trucks = $tc->searchAllTrucksByKeyword();
+	XmlHelper::viewAll($trucks);
 });
 
 $app->run();

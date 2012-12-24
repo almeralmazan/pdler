@@ -12,15 +12,15 @@ class UserController
 
 		$errors = array();
 
-		if ($this->validate_signup($username, $email, $errors)) {
-			XmlViewHelper::render_signup_error($errors);
+		if ($this->validateSignup($username, $email, $errors)) {
+			XmlHelper::render_signup_error($errors);
 		} else {
 			UserModel::insert($username, $email, $password);
-			XmlViewHelper::render_signup_success();
+			XmlHelper::render_signup_success();
 		}
 	}
 
-	private function validate_signup($username, $email, &$errors)
+	private function validateSignup($username, $email, &$errors)
 	{
 		$error_count = 0;
 

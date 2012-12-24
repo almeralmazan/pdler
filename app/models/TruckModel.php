@@ -8,7 +8,7 @@
  */
 class TruckModel
 {
-   public static function select_all_trucks()
+   public static function selectAllTrucks()
    {
       $query = "SELECT * " .
                "FROM trucks " .
@@ -20,14 +20,14 @@ class TruckModel
       return $result;
    }
 
-   public static function list_truck_details()
+   public static function listTruckDetails()
    {
       $truck_id = $_POST['truck_id'];
       $result = ORM::for_table('trucks')->find_one($truck_id);
       return $result;
    }
 
-   public static function set_location($longitude, $latitude, $max_distance)
+   public static function setLocation($longitude, $latitude, $max_distance)
    {
       $formula = "sqrt( pow(abs(longitude - $longitude),2) * pow(abs(latitude - $latitude),2) )";
       $query = "SELECT * FROM trucks WHERE $max_distance >= $formula";
@@ -35,7 +35,7 @@ class TruckModel
       return $result;
    }
 
-   public static function select_all_trucks_by($keyword)
+   public static function selectAllTrucksBy($keyword)
    {
       $query = "SELECT * " .
                "FROM trucks " .
