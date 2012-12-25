@@ -13,7 +13,7 @@ class UserModel
       $user = ORM::for_table('users')->create();
       $user->username = $username;
       $user->email = $email;
-      $user->password = $password;
+      $user->password = md5($password);
       $user->created_at = date("Y-m-d H:i:s");
       $user->updated_at = "0000-00-00 00:00:00";
       $user->save();

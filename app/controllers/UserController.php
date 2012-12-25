@@ -13,10 +13,10 @@ class UserController
 		$errors = array();
 
 		if ($this->validateSignup($username, $email, $errors)) {
-			XmlHelper::render_signup_error($errors);
+			XmlHelper::renderSignupError($errors);
 		} else {
 			UserModel::insert($username, $email, $password);
-			XmlHelper::render_signup_success();
+			XmlHelper::renderSignupSuccess();
 		}
 	}
 

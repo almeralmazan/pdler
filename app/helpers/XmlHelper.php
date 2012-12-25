@@ -2,24 +2,17 @@
 
 class XmlHelper
 {
-	public static function viewTruckDetailsForOne($truck)
+	public static function viewTruckDetails($truck)
 	{
       $xml = self::createHeader();
-
 		if ($truck) {
-			$xml .= "<truck id=\"$truck->id\" name=\"$truck->name\"";
-			$xml .= " display_name=\"$truck->display_name\" city=\"$truck->city\"";
-			$xml .= " state=\"$truck->state\" category=\"$truck->category\"";
-			$xml .= " longitude=\"$truck->longitude\" latitude=\"$truck->latitude\"";
-			$xml .= " status=\"$truck->status\"/>\n";
+			$xml .= self::appendFirstPartOfXmlTruckDetails($truck) . "/>\n";
 		} else {
 			$xml .= '<truck id="" name="" display_name="" city="" state="" category=""';
 			$xml .= ' longitude="" latitude="" status=""/>';
 		}
-
 		echo $xml;
 	}
-
 
 	public static function viewAll($trucks)
 	{
@@ -27,11 +20,7 @@ class XmlHelper
 		$xml .= "<trucks>\n";
 
 		foreach ($trucks as $truck) {
-			$xml .= "\t<truck id=\"$truck->id\" name=\"$truck->name\"";
-			$xml .= " display_name=\"$truck->display_name\"";
-			$xml .= " city=\"$truck->city\" state=\"$truck->state\"";
-			$xml .= " category=\"$truck->category\" longitude=\"$truck->longitude\"";
-			$xml .= " latitude=\"$truck->latitude\" status=\"$truck->status\"";
+			$xml .= "\t" . self::appendFirstPartOfXmlTruckDetails($truck);
 			$xml .= " created_at=\"$truck->created_at\" updated_at=\"$truck->updated_at\"";
 			$xml .= " truck_id=\"$truck->truck_id\" about=\"$truck->about\"";
 			$xml .= " image=\"$truck->image\" telephone=\"$truck->telephone\"";
@@ -42,6 +31,16 @@ class XmlHelper
 		$xml .= "</trucks>";
 		echo $xml;
 	}
+
+   private static function appendFirstPartOfXmlTruckDetails($truck)
+   {
+      $xml = "<truck id=\"". $truck->id ."\" name=\"$truck->name\"";
+      $xml .= " display_name=\"$truck->display_name\"";
+      $xml .= " city=\"$truck->city\" state=\"$truck->state\"";
+      $xml .= " category=\"$truck->category\" longitude=\"$truck->longitude\"";
+      $xml .= " latitude=\"$truck->latitude\" status=\"$truck->status\"";
+      return $xml;
+   }
 
 	public static function createErrorMessages( $errors )
 	{

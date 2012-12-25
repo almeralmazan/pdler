@@ -10,7 +10,9 @@ $app->get('/', function() {
 });
 
 $app->get('/signup', function() use ($app) {
-	$app->render('signup.php', array('title' => 'Signup Page'));
+	$app->render(
+      'signup.php',
+      array('title' => 'Signup Page'));
 });
 
 $app->post('/signup', function() {
@@ -19,25 +21,23 @@ $app->post('/signup', function() {
 });
 
 $app->post('/truck_details', function() {
-   $truck = TruckModel::listTruckDetails();
-   XmlHelper::viewTruckDetailsForOne($truck);
+   $truck = new TruckController();
+   $truck->getTruckDetails();
 });
 
 $app->post('/trucks', function() {
-   $trucks = TruckModel::selectAllTrucks();
-   XmlHelper::viewAll($trucks);
+   $trucks = new TruckController();
+   $trucks->getAllTrucks();
 });
 
 $app->post('/nearme', function () {
    $tc = new TruckController();
-   $trucks = $tc->getAllTrucksNearMe();
-	XmlHelper::viewAll($trucks);
+   $tc->getAllTrucksNearMe();
 });
 
 $app->post('/search', function () {
-	$tc  = new TruckController();
-   $trucks = $tc->searchAllTrucksByKeyword();
-	XmlHelper::viewAll($trucks);
+	$tc = new TruckController();
+   $tc->getAllTrucksByKeyword();
 });
 
 $app->run();

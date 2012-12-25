@@ -12,21 +12,31 @@ class TruckController
 
    public function getAllTrucksNearMe()
    {
-      $latitude = $_POST['latitude'];
       $longitude = $_POST['longitude'];
+      $latitude = $_POST['latitude'];
       $max_distance = $_POST['max_distance'];
 
-      $location = TruckModel::set_location($longitude, $latitude, $max_distance);
-
-      return $location;
+      $trucks = TruckModel::geoLocation($longitude, $latitude, $max_distance);
+      XmlHelper::viewAll($trucks);
    }
 
-   public function searchAllTrucksByKeyword()
+   public function getAllTrucksByKeyword()
    {
       $keyword = $_POST['keyword'];
+      $trucks = TruckModel::selectAllTrucksByKeyword($keyword);
+      XmlHelper::viewAll($trucks);
+   }
 
-      $trucks = TruckModel::select_all_trucks_by($keyword);
+   public function getTruckDetails()
+   {
+      $truck_id = $_POST['truck_id'];
+      $truck = TruckModel::listTruckDetails($truck_id);
+      XmlHelper::viewTruckDetails($truck);
+   }
 
-      return $trucks;
+   public function getAllTrucks()
+   {
+      $trucks = TruckModel::selectAllTrucks();
+      XmlHelper::viewAll($trucks);
    }
 }
