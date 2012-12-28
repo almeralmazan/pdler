@@ -12,11 +12,11 @@ class TruckController
 
    public function getAllTrucksNearMe()
    {
-      $longitude = $_POST['longitude'];
-      $latitude = $_POST['latitude'];
-      $max_distance = $_POST['max_distance'];
+      $long = $_POST['longitude'];
+      $lat = $_POST['latitude'];
+      $max_dist = $_POST['max_distance'];
 
-      $trucks = TruckModel::geoLocation($longitude, $latitude, $max_distance);
+      $trucks = TruckModel::searchForLocation($long, $lat, $max_dist);
       XmlHelper::viewAll($trucks);
    }
 

@@ -4,18 +4,18 @@ class XmlHelper
 {
    public static function createHeader()
    {
-      return "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
+      return '<?xml version="1.0" encoding="utf-8"?>'."\n";
    }
 
 	public static function viewTruckDetails($truck)
 	{
       $xml = self::createHeader();
-		if ($truck) {
-			$xml .= self::prependFirstPartOfXmlTruckDetails($truck) . "/>\n";
-		} else {
-			$xml .= '<truck id="" name="" display_name="" city="" state=""'
-			      . ' category="" longitude="" latitude="" status=""/>';
-		}
+
+      $xml .= ($truck)
+         ? self::prependFirstPartOfXmlTruckDetails($truck) . "/>\n"
+         : '<truck id="" name="" display_name="" city="" state=""'
+            . ' category="" longitude="" latitude="" status=""/>';
+
 		echo $xml;
 	}
 
@@ -54,8 +54,7 @@ class XmlHelper
 
 		foreach ($errors as $key => $value) {
 			$message .= "\t<message source=\"$key\" "
-			         . "text=\"$value\" "
-			         . "/>\n";
+			         . "text=\"$value\"/>\n";
 		}
 		
 		$message .= "</messages>";
