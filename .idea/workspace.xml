@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ead25aa2-7602-426e-ba9f-2da46b5bfa1e" name="Default" comment="renamed XmlHelper to XmlViewHelper">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/warning_info.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/b4uploading.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/composer.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/composer.phar" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/XmlHelper.php" afterPath="$PROJECT_DIR$/app/helpers/XmlHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/TruckModel.php" afterPath="$PROJECT_DIR$/app/models/TruckModel.php" />
     </list>
     <list id="437e5c96-5fdd-4c88-a1fb-29359dea1e4e" name="Rejected commit: Default" comment="renamed XmlHelper to XmlViewHelper" />
     <ignored path="pdler-slim.iws" />
@@ -50,13 +44,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XmlHelper.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="XmlHelper.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/XmlHelper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="56" selection-start="291" selection-end="291" vertical-scroll-proportion="-1.576087">
+            <state line="7" column="4" selection-start="136" selection-end="136" vertical-scroll-proportion="-4.6666665">
               <folding>
                 <marker date="1356676611000" expanded="true" signature="569:1089" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TruckModel.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/TruckModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="4" selection-start="596" selection-end="596" vertical-scroll-proportion="0.25">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,7 +83,6 @@
         <option value="$PROJECT_DIR$/templates/signup.php" />
         <option value="$PROJECT_DIR$/app/views/signup.php" />
         <option value="$PROJECT_DIR$/vendor/idiorm/idiorm.php" />
-        <option value="$PROJECT_DIR$/app/models/TruckModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/TruckController.php" />
         <option value="$PROJECT_DIR$/app/models/UserModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
@@ -88,6 +90,7 @@
         <option value="$PROJECT_DIR$/routes.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/helpers/XmlHelper.php" />
+        <option value="$PROJECT_DIR$/app/models/TruckModel.php" />
       </list>
     </option>
   </component>
@@ -383,11 +386,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/TruckModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="395" selection-end="395" vertical-scroll-proportion="0.55172414" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/idiorm/idiorm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="726" column="11" selection-start="27340" selection-end="27340" vertical-scroll-proportion="6.921933" />
@@ -446,10 +444,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/XmlHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="56" selection-start="291" selection-end="291" vertical-scroll-proportion="-1.576087">
+        <state line="7" column="4" selection-start="136" selection-end="136" vertical-scroll-proportion="-4.6666665">
           <folding>
             <marker date="1356676611000" expanded="true" signature="569:1089" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/TruckModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="4" selection-start="596" selection-end="596" vertical-scroll-proportion="0.25">
+          <folding />
         </state>
       </provider>
     </entry>
