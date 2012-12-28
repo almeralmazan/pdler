@@ -2,14 +2,11 @@
 
 class XmlHelper
 {
-   public static function createHeader()
-   {
-      return '<?xml version="1.0" encoding="utf-8"?>'."\n";
-   }
+   const XML_HEADER = '<?xml version="1.0" encoding="utf-8"?>';
 
 	public static function viewTruckDetails($truck)
 	{
-      $xml = self::createHeader();
+      $xml = self::XML_HEADER . "\n";
 
       $xml .= ($truck)
          ? self::prependFirstPartOfXmlTruckDetails($truck) . "/>\n"
@@ -21,8 +18,8 @@ class XmlHelper
 
 	public static function viewAll($trucks)
 	{
-      $xml = self::createHeader()
-		      . "<trucks>\n";
+      $xml = self::XML_HEADER . "\n"
+		      . '<trucks>'."\n";
 
 		foreach ($trucks as $truck) {
 			$xml .= "\t" . self::prependFirstPartOfXmlTruckDetails($truck)
@@ -63,14 +60,14 @@ class XmlHelper
 
    public static function createUser($user)
    {
-      return self::createHeader()
+      return self::XML_HEADER . "\n"
             . "<user username=\"" . $user->username . "\" "
             . "email=\"" . $user->email . "\"/>";
    }
 
    public static function renderErrors($elementName, $errors)
    {
-      return self::createHeader()
+      return self::XML_HEADER . "\n"
             . "<$elementName success=\"false\">\n"
             . self::createErrorMessages($errors)
             . "\n</$elementName>";
@@ -78,7 +75,7 @@ class XmlHelper
 
    public static function renderSuccess($elementName, $children)
    {
-      return self::createHeader()
+      return self::XML_HEADER . "\n"
             . "<$elementName success=\"true\">"
             .     $children
             . "</$elementName>";
