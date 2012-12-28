@@ -2,11 +2,16 @@
 
 class XmlHelper
 {
+   public static function createHeader()
+   {
+      return "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
+   }
+
 	public static function viewTruckDetails($truck)
 	{
       $xml = self::createHeader();
 		if ($truck) {
-			$xml .= self::appendFirstPartOfXmlTruckDetails($truck) . "/>\n";
+			$xml .= self::prependFirstPartOfXmlTruckDetails($truck) . "/>\n";
 		} else {
 			$xml .= '<truck id="" name="" display_name="" city="" state="" category=""';
 			$xml .= ' longitude="" latitude="" status=""/>';
@@ -20,7 +25,7 @@ class XmlHelper
 		$xml .= "<trucks>\n";
 
 		foreach ($trucks as $truck) {
-			$xml .= "\t" . self::appendFirstPartOfXmlTruckDetails($truck);
+			$xml .= "\t" . self::prependFirstPartOfXmlTruckDetails($truck);
 			$xml .= " created_at=\"$truck->created_at\" updated_at=\"$truck->updated_at\"";
 			$xml .= " truck_id=\"$truck->truck_id\" about=\"$truck->about\"";
 			$xml .= " image=\"$truck->image\" telephone=\"$truck->telephone\"";
@@ -32,7 +37,7 @@ class XmlHelper
 		echo $xml;
 	}
 
-   private static function appendFirstPartOfXmlTruckDetails($truck)
+   private static function prependFirstPartOfXmlTruckDetails($truck)
    {
       $xml = "<truck id=\"". $truck->id ."\" name=\"$truck->name\"";
       $xml .= " display_name=\"$truck->display_name\"";
@@ -56,25 +61,32 @@ class XmlHelper
 		return $message;
 	}
 
-   public static function renderSignupError($errors)
+   public static function createUser($user)
    {
-      $xml = XmlHelper::createHeader();
-      $xml .= "<signup success=\"false\">\n";
-      $xml .= XmlHelper::createErrorMessages($errors);
-      $xml .= "\n</signup>";
+      $xml = self::createHeader();
+      $xml .= "<user ";
+      $xml .= "username=\"" . $user->username . "\" ";
+      $xml .= "email=\"" . $user->email . "\" ";
+
+      $xml .= "/>";
+      return $xml;
+   }
+
+   public static function renderErrors($elementName, $errors)
+   {
+      $xml = self::createHeader();
+      $xml .= "<$elementName success=\"false\">\n";
+      $xml .= self::createErrorMessages($errors);
+      $xml .= "\n</$elementName>";
       echo $xml;
    }
 
-   public static function renderSignupSuccess()
+   public static function renderSuccess($elementName, $children)
    {
-      $xml = XmlHelper::createHeader();
-      $xml .= "<signup success=\"true\"/>";
+      $xml = self::createHeader();
+      $xml .= "<$elementName success=\"true\">";
+      $xml .=	 $children;
+      $xml .= "</$elementName>";
       echo $xml;
    }
-
-	public static function createHeader()
-	{ 
-		return "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n";
-	}
-
 }

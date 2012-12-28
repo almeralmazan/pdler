@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ead25aa2-7602-426e-ba9f-2da46b5bfa1e" name="Default" comment="renamed XmlHelper to XmlViewHelper">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/login.php" afterPath="$PROJECT_DIR$/app/views/login.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/signup.php" afterPath="$PROJECT_DIR$/app/views/signup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/TruckController.php" afterPath="$PROJECT_DIR$/app/controllers/TruckController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/UserController.php" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/XmlHelper.php" afterPath="$PROJECT_DIR$/app/helpers/XmlHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/TruckModel.php" afterPath="$PROJECT_DIR$/app/models/TruckModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login.php" afterPath="$PROJECT_DIR$/app/views/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.php" afterPath="$PROJECT_DIR$/routes.php" />
     </list>
-    <list id="437e5c96-5fdd-4c88-a1fb-29359dea1e4e" name="Rejected commit: Default" comment="renamed XmlHelper to XmlViewHelper">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/helpers/XmlViewHelper.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list id="437e5c96-5fdd-4c88-a1fb-29359dea1e4e" name="Rejected commit: Default" comment="renamed XmlHelper to XmlViewHelper" />
     <ignored path="pdler-slim.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="ead25aa2-7602-426e-ba9f-2da46b5bfa1e" time="1356351437915" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +29,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="7" selection-start="188" selection-end="188" vertical-scroll-proportion="-4.071429">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="21" selection-start="269" selection-end="269" vertical-scroll-proportion="0.51724136">
+            <state line="14" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="-9.5">
               <folding />
             </state>
           </provider>
@@ -59,16 +70,18 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/vendor/slim/slim/Slim/View.php" />
-        <option value="$PROJECT_DIR$/app/models/UserModel.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/warning_info.txt" />
         <option value="$PROJECT_DIR$/app/helpers/XmlViewHelper.php" />
         <option value="$PROJECT_DIR$/templates/signup.php" />
         <option value="$PROJECT_DIR$/app/views/signup.php" />
-        <option value="$PROJECT_DIR$/app/controllers/TruckController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/vendor/idiorm/idiorm.php" />
         <option value="$PROJECT_DIR$/app/models/TruckModel.php" />
+        <option value="$PROJECT_DIR$/app/controllers/TruckController.php" />
         <option value="$PROJECT_DIR$/app/helpers/XmlHelper.php" />
+        <option value="$PROJECT_DIR$/app/models/UserModel.php" />
+        <option value="$PROJECT_DIR$/app/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/views/login.php" />
         <option value="$PROJECT_DIR$/routes.php" />
       </list>
     </option>
@@ -105,6 +118,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -151,54 +174,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdler-slim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdler-slim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdler-slim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdler-slim" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -214,7 +191,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="102" />
-    <property name="options.lastSelected" value="web-ide.project.structure" />
+    <property name="options.lastSelected" value="reference.webide.settings.project.settings.php" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="107" />
@@ -222,6 +199,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="901" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="107" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="104" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
@@ -282,7 +260,11 @@
       <created>1356348913120</created>
       <updated>1356348913120</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor methods related to trucks">
+      <created>1356433604576</created>
+      <updated>1356433604576</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -309,20 +291,20 @@
     <frame x="0" y="22" width="1280" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838285" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838285" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838285" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980111" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18615752" sideWeight="0.67161715" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.141607" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838285" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -365,7 +347,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="include warning_info.txt and refactor naming convention" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor methods related to trucks" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -380,119 +362,98 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="renamed XmlHelper to XmlViewHelper" />
     <MESSAGE value="include warning_info.txt and refactor naming convention" />
+    <MESSAGE value="refactor methods related to trucks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/slim/slim/Slim/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="2" selection-start="1664" selection-end="1664" vertical-scroll-proportion="-9.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/slim/slim/README.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/slim/slim/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/slim/slim/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/slim/slim/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="5" vertical-scroll-proportion="-4.0855017">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="5" vertical-scroll-proportion="-4.0855017" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/WARNING_INFO.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0656304">
-          <folding />
-        </state>
+        <state line="2" column="21" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0656304" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/public/js/protos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="663" selection-end="663" vertical-scroll-proportion="0.6551724">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/signup.php">
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="38" selection-start="1078" selection-end="1086" vertical-scroll-proportion="1.4126394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/UserModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="1" selection-start="524" selection-end="524" vertical-scroll-proportion="0.6896552">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/TruckModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="38" selection-start="625" selection-end="625" vertical-scroll-proportion="0.82758623">
-          <folding />
-        </state>
+        <state line="16" column="0" selection-start="395" selection-end="395" vertical-scroll-proportion="0.55172414" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.41379312" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/idiorm/idiorm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="726" column="11" selection-start="27340" selection-end="27340" vertical-scroll-proportion="6.921933" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/UserModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="4" selection-start="527" selection-end="527" vertical-scroll-proportion="0.6551724" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="12" selection-start="384" selection-end="384" vertical-scroll-proportion="-0.03448276">
-          <folding />
-        </state>
+        <state line="41" column="7" selection-start="964" selection-end="964" vertical-scroll-proportion="1.3103448" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/TruckController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="23" selection-start="502" selection-end="502" vertical-scroll-proportion="0.6896552">
-          <folding />
-        </state>
+        <state line="10" column="18" selection-start="208" selection-end="208" vertical-scroll-proportion="0.03448276" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/XmlHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="46" selection-start="380" selection-end="380" vertical-scroll-proportion="0.41379312">
+        <state line="8" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.03448276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="7" selection-start="409" selection-end="409" vertical-scroll-proportion="-10.857142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/slim/slim/Slim/Middleware/SessionCookie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="28" selection-start="4019" selection-end="4019" vertical-scroll-proportion="0.10594796">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="21" selection-start="269" selection-end="269" vertical-scroll-proportion="0.51724136">
+        <state line="14" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="-9.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="7" selection-start="188" selection-end="188" vertical-scroll-proportion="-4.071429">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

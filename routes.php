@@ -9,6 +9,10 @@ $app->get('/', function() {
 	echo 'Pdler Web App';
 });
 
+$app->get('/login', function() use ($app) {
+   $app->render('login.php');
+});
+
 $app->get('/signup', function() use ($app) {
 	$app->render(
       'signup.php',
