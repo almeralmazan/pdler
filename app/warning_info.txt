@@ -1,3 +1,0 @@
-After creating class for controllers, models, and views
-DON'T ever forget to include in index.php
-It's a must ! ! ! ! !

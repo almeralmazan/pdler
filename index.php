@@ -3,11 +3,12 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Include all libraries
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-require 'vendor/autoload.php';
-require 'app/controllers/UserController.php';
-require 'app/controllers/TruckController.php';
-require 'app/models/TruckModel.php';
-require 'app/helpers/XmlHelper.php';
+require_once 'vendor/autoload.php';
+require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/TruckController.php';
+require_once 'app/models/TruckModel.php';
+require_once 'app/models/UserModel.php';
+require_once 'app/helpers/XmlHelper.php';
 require_once 'vendor/idiorm/idiorm.php';
 
 
