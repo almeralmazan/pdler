@@ -38,7 +38,7 @@ class XmlHelper
 
    private static function prependFirstPartOfXmlTruckDetails($truck)
    {
-      return "<truck id=\"". $truck->id ."\" name=\"$truck->name\""
+      return "<truck id=\"$truck->id\" name=\"$truck->name\""
             . " display_name=\"$truck->display_name\""
             . " city=\"$truck->city\" state=\"$truck->state\""
             . " category=\"$truck->category\" longitude=\"$truck->longitude\""
@@ -47,7 +47,7 @@ class XmlHelper
 
 	public static function createErrorMessages($errors)
 	{
-		$message = "<messages/>\n";
+		$message = "<messages>\n";
 
 		foreach ($errors as $key => $value) {
 			$message .= "\t<message source=\"$key\" "
@@ -60,14 +60,14 @@ class XmlHelper
 
    public static function createUser($user)
    {
-      return self::XML_HEADER . "\n"
-            . "<user username=\"" . $user->username . "\" "
-            . "email=\"" . $user->email . "\"/>";
+      echo self::XML_HEADER . "\n"
+            . "<user username=\"$user->username\" "
+            . "email=\"$user->email\"/>";
    }
 
    public static function renderErrors($elementName, $errors)
    {
-      return self::XML_HEADER . "\n"
+      echo self::XML_HEADER . "\n"
             . "<$elementName success=\"false\">\n"
             . self::createErrorMessages($errors)
             . "\n</$elementName>";
@@ -75,8 +75,14 @@ class XmlHelper
 
    public static function renderSuccess($elementName, $children)
    {
-      return self::XML_HEADER . "\n"
-            . "<$elementName success=\"true\">"
+      $header = '';
+      
+      if ($elementName != 'login') {
+         $header .= self::XML_HEADER;
+      }
+      
+      echo  $header
+            . "\n<$elementName success=\"true\">"
             .     $children
             . "</$elementName>";
    }

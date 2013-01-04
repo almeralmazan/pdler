@@ -1,20 +1,13 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: almerboy
- * Date: 12/24/12
- * Time: 2:49 PM
- * To change this template use File | Settings | File Templates.
- */
+
 class TruckModel
 {
    public static function selectAllTrucks()
    {
       return ORM::for_table('trucks')
                ->raw_query(
-                  "SELECT * " .
-                  "FROM trucks " .
-                  "LEFT JOIN truck_details " .
+                  "SELECT * FROM trucks " .
+                  "LEFT JOIN truck_details " . 
                   "ON trucks.id = truck_details.truck_id"
                )->find_many();
    }
@@ -26,11 +19,12 @@ class TruckModel
 
    public static function searchForLocation($long, $lat, $max_dist)
    {
+      $formula = self::compute($long, $lat);
       return ORM::for_table('trucks')
                ->raw_query(
                   "SELECT * " .
                   "FROM trucks " .
-                  "WHERE $max_dist >= ".self::compute($long, $lat)
+                  "WHERE $max_dist >= $formula"
                )->find_many();
    }
 

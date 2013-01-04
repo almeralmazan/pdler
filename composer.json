@@ -1,0 +1,7 @@
+{
+  "require": {
+    "slim/slim": "2.*",
+    "ruckusing/ruckusing-migrations": "dev-master",
+    "j4mie/idiorm": "dev-sphinxdocs"
+  }
+}
